@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Brandon Alexander Puerta Taquinas | SysAdmin & Software Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:
+  linear-gradient(rgba(2,6,23,.95), rgba(2,6,23,.98)),
+  url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+  background-size:cover;
+  background-attachment:fixed;
+  color:#e2e8f0;
+  line-height:1.7;
+  padding:40px 20px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  background:rgba(15,23,42,.92);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:
+  0 20px 60px rgba(0,0,0,.5),
+  0 0 80px rgba(56,189,248,.08);
+}
+
+/* HERO */
+
+.hero{
+  padding:60px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:#38bdf8;
+  filter:blur(160px);
+  opacity:.15;
+  top:-150px;
+  right:-120px;
+}
+
+.header-container{
+  display:flex;
+  align-items:center;
+  gap:45px;
+  position:relative;
+  z-index:2;
+}
+
+.profile-wrapper{
+  position:relative;
+}
+
+.profile-wrapper::before{
+  content:'';
+  position:absolute;
+  inset:-8px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#38bdf8,#0ea5e9,#2563eb);
+  z-index:-1;
+  animation:rotate 8s linear infinite;
+}
+
+@keyframes rotate{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+.profile-pic{
+  width:220px;
+  height:220px;
+  object-fit:cover;
+  border-radius:50%;
+  border:6px solid #0f172a;
+  display:block;
+  box-shadow:0 10px 35px rgba(0,0,0,.4);
+}
+
+.header-text{
+  flex:1;
+}
+
+h1{
+  font-size:4rem;
+  line-height:1.1;
+  margin-bottom:12px;
+  font-weight:800;
+  color:white;
+}
+
+.highlight{
+  color:#38bdf8;
+}
+
+.subtitle{
+  font-size:1.2rem;
+  color:#94a3b8;
+  margin-bottom:25px;
+  font-weight:500;
+}
+
+.hero-description{
+  color:#cbd5e1;
+  font-size:1rem;
+  margin-bottom:30px;
+  max-width:850px;
+}
+
+/* BOTONES */
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.btn{
+  padding:14px 24px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+
+.btn-primary{
+  background:#38bdf8;
+  color:#0f172a;
+}
+
+.btn-primary:hover{
+  transform:translateY(-4px);
+  background:#0ea5e9;
+}
+
+.btn-secondary{
+  border:1px solid #38bdf8;
+  color:#38bdf8;
+}
+
+.btn-secondary:hover{
+  background:#38bdf8;
+  color:#0f172a;
+}
+
+/* CONTACTO */
+
+.contact-info{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-top:15px;
+}
+
+.contact-item{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+  padding:10px 15px;
+  border-radius:12px;
+  color:#cbd5e1;
+  font-size:.95rem;
+}
+
+.contact-item a{
+  color:#38bdf8;
+  text-decoration:none;
+}
+
+/* SECCIONES */
+
+.section{
+  padding:50px 60px;
+}
+
+.section-title{
+  font-size:2rem;
+  margin-bottom:30px;
+  color:white;
+  position:relative;
+  display:inline-block;
+}
+
+.section-title::after{
+  content:'';
+  width:70%;
+  height:4px;
+  background:#38bdf8;
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  border-radius:20px;
+}
+
+/* CARDS */
+
+.card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:24px;
+  padding:30px;
+  margin-bottom:25px;
+  transition:.35s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#38bdf8;
+  box-shadow:0 10px 30px rgba(56,189,248,.08);
+}
+
+.job-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.job-title{
+  font-size:1.2rem;
+  color:#38bdf8;
+  font-weight:700;
+}
+
+.job-date{
+  background:#1e293b;
+  padding:8px 14px;
+  border-radius:12px;
+  color:#cbd5e1;
+  font-size:.9rem;
+}
+
+.card p{
+  color:#cbd5e1;
+  margin-bottom:15px;
+}
+
+ul{
+  margin-left:20px;
+  margin-top:15px;
+}
+
+li{
+  margin-bottom:12px;
+  color:#cbd5e1;
+}
+
+/* HABILIDADES */
+
+.skills-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.skill-tag{
+  background:#111827;
+  border:1px solid #334155;
+  color:#e2e8f0;
+  padding:12px 18px;
+  border-radius:999px;
+  font-size:.95rem;
+  transition:.3s;
+}
+
+.skill-tag:hover{
+  background:#38bdf8;
+  color:#0f172a;
+  transform:scale(1.05);
+}
+
+/* FOOTER */
+
+.footer{
+  text-align:center;
+  padding:35px;
+  color:#94a3b8;
+  border-top:1px solid rgba(255,255,255,.06);
+  background:#020617;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .hero{
+    padding:40px 30px;
+  }
+
+  .section{
+    padding:40px 30px;
+  }
+
+  .header-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  h1{
+    font-size:2.8rem;
+  }
+
+  .buttons{
+    justify-content:center;
+  }
+
+  .contact-info{
+    justify-content:center;
+  }
+
+  .profile-pic{
+    width:180px;
+    height:180px;
+  }
+
+}
+
+@media(max-width:600px){
+
+  h1{
+    font-size:2.2rem;
+  }
+
+  .section-title{
+    font-size:1.6rem;
+  }
+
+  .card{
+    padding:22px;
+  }
+
+  .job-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="header-container">
+
+<div class="profile-wrapper">
+
+<!-- TU FOTO -->
+<img src="photo.png" alt="Brandon Puerta" class="profile-pic">
+
+</div>
+
+<div class="header-text">
+
+<h1>
+Brandon Alexander <span class="highlight">Puerta Taquinas</span>
+</h1>
+
+<div class="subtitle">
+Tecnólogo en Desarrollo de Software (En Curso) | SysAdmin | Ciberseguridad | Redes e Infraestructura TI
+</div>
+
+<p class="hero-description">
+Técnico en Sistemas con formación avanzada en Desarrollo de Software y experiencia integral en automatización, infraestructura corporativa, redes empresariales, ciberseguridad defensiva y administración de servidores Linux. Especializado en optimización de procesos, auditoría de redes, despliegue de infraestructura y desarrollo de soluciones empresariales escalables.
+</p>
+
+<div class="buttons">
+
+<a href="https://linkedin.com/in/brandon-alexander-puerta" target="_blank" class="btn btn-primary">
+🚀 LinkedIn
+</a>
+
+<a href="https://github.com/BrandP102" target="_blank" class="btn btn-secondary">
+💻 GitHub
+</a>
+
+</div>
+
+<div class="contact-info">
+
+<div class="contact-item">
+📧 <a href="mailto:brandonpuerta102@hotmail.com">brandonpuerta102@hotmail.com</a>
+</div>
+
+<div class="contact-item">
+📞 3238491894 - 3147218992
+</div>
+
+<div class="contact-item">
+📍 Miranda, Cauca - Colombia
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PERFIL -->
+
+<section class="section">
+
+<h2 class="section-title">
+Perfil
+</h2>
+
+<div class="card">
+
+<p>
+Técnico en Sistemas con formación avanzada en curso como Tecnólogo en Desarrollo de Software (UNAD). Especialista con un enfoque integral y multidisciplinario que conecta el soporte de hardware físico, el despliegue de redes estructuradas, la ciberseguridad defensiva y el desarrollo de software seguro. Con experiencia comprobada en el sector público y privado, se destaca por auditar infraestructuras cableadas e inalámbricas mediante el uso de herramientas de pentesting, optimizar la operación organizacional a través de la automatización avanzada de procesos de negocio y desarrollar herramientas de gestión escalables a la medida. Orientado a la resolución técnica de problemas complejos, la resiliencia en la continuidad operativa y la entrega de resultados medibles de alto impacto empresarial.
+</p>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCIA -->
+
+<section class="section">
+
+<h2 class="section-title">
+Experiencia
+</h2>
+
+<div class="card">
+
+<div class="job-header">
+<div class="job-title">
+Técnico en Sistemas | Alcaldía de Miranda, Cauca
+</div>
+
+<div class="job-date">
+Feb 2024 – May 2026 
+</div>
+</div>
+
+<ul>
+
+<li>
+<strong>Automatización de Procesos Avanzada:</strong>
+Diseño y desarrollo de scripts robustos en Python y PowerShell para la captura, procesamiento y depuración automatizada de datos biométricos de la entidad, disminuyendo drásticamente los tiempos de procesamiento semanal en un 98% (de 5 días de trabajo manual a solo 2 horas). Implementación de scripts de mantenimiento para análisis automático de almacenamiento en disco, sincronización de archivos críticos y generación estructurada de logs de auditoría.
+</li>
+
+<li>
+<strong>Desarrollo de Herramientas de Gestión (VBA):</strong>
+Creación y despliegue de un motor de reglas en VBA sobre Microsoft Excel para la semaforización automatizada de radicados y solicitudes legales. El sistema calcula plazos de vencimiento exactos restando fines de semana e incorporando la lógica dinámica de días festivos vigentes, siendo un componente misional activo para el control de términos legales de la entidad.
+</li>
+
+<li>
+<strong>Gestión y Aseguramiento de Redes Corporativas:</strong>
+Configuración lógica y despliegue físico de antenas corporativas Ruckus T300 (redes internas aisladas por dependencias, aislamiento de clientes en capa 2, portales cautivos Hotspot y enlaces WAN bloqueados) y Ruijie RAP6262 (configuración de Wi-Fi público abierto con portal cautivo parametrizado bajo políticas de QoS que limitan a 15 minutos de navegación y 3 Mbps de ancho de banda por usuario). Configuración de reglas estrictas de firewall en routers TP-Link y Tenda corporativos para denegar accesos externos no autorizados a protocolos internos de administración o carpetas compartidas de red.
+</li>
+
+<li>
+<strong>Ciberseguridad y Auditoría Perimetral:</strong>
+Auditoría de infraestructura interna y perimetral de la organización. Análisis y captura activa de tráfico de red con Wireshark, escaneo profundo de subredes e IPs corporativas con Nmap, y monitoreo preventivo en Shodan.io para mapear y cerrar puertos de internet visibles y potencialmente vulnerables expuestos en la dirección IP pública del proveedor de servicios de internet. Ejecución de pruebas de stress inalámbrico y auditoría de protocolos (WPA, WPA2, WPA3, WPS) usando Kismet, Wifite y Aircrack-ng para robustecer el cifrado de las redes inalámbricas locales.
+</li>
+
+<li>
+<strong>Despliegue de Cableado Estructurado e Infraestructura Física:</strong>
+Planificación, medición y tendido físico de cableado de red estructurado UTP, interconectando 3 edificios corporativos separados utilizando más de 300 metros de cableado con ponchado RJ45, restableciendo de forma exitosa la conectividad de red local e internet de más de 30 estaciones de trabajo y routers. Diseño e implementación de cableado para telefonía análoga del edificio principal mediante el tendido de 100 metros de líneas de comunicación con ponchado modular en conectores RJ11 y RJ9 para habilitar 4 líneas de comunicación internas.
+</li>
+
+<li>
+<strong>Soporte Técnico Especializado y Microelectrónica:</strong>
+Diagnóstico avanzado de componentes físicos de computadoras, servidores Dell PowerEdge (automatización segura de backups de bases de datos mediante PowerShell) y sistemas de impresión de alto volumen láser/tinta. Reparación física de componentes electrónicos a nivel de placa de circuito mediante técnicas de soldadura de precisión con cautín y estaño, logrando la recuperación de periféricos, pantallas integradas, cables de poder rotos y fuentes de alimentación eléctricas averiadas.
+</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<div class="job-header">
+<div class="job-title">
+Técnico de Campo / Instalador WISP | SCOMMUNICA
+</div>
+
+<div class="job-date">
+Sep 2023 – Feb 2024
+</div>
+</div>
+
+<ul>
+
+<li>
+<strong>Despliegue de Redes Inalámbricas de Larga Distancia:</strong>
+Instalación en campo y direccionamiento de precisión de antenas Ubiquiti AirMax M5 para establecer enlaces inalámbricos estables de internet de banda ancha (enlace de última milla) entre estaciones receptoras de clientes y torres de control principales.
+</li>
+
+<li>
+<strong>Comisionamiento Técnico de Dispositivos:</strong>
+Configuración lógica y aprovisionamiento técnico de antenas CPE y enrutadores residenciales/comerciales (Tenda y TP-Link) mediante conexiones por emuladores de terminal de comandos (PuTTY) utilizando computadoras portátiles en terreno.
+</li>
+
+<li>
+<strong>Conectividad Física e Infraestructura Externa:</strong>
+Realización de tendidos de cableado estructurado UTP aptos para intemperie, ponchado estandarizado de conectores RJ45 y configuración/revisión de inyectores de energía Power over Ethernet (PoE).
+</li>
+
+<li>
+<strong>Atención y Soporte Técnico en Sitio:</strong>
+Manejo de la relación con el cliente final para la validación física de la velocidad y latencia contratadas, garantizando el cumplimiento estricto de los parámetros técnicos exigidos antes de la entrega del servicio.
+</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<div class="job-header">
+<div class="job-title">
+Técnico de Soporte y Despliegue de TI | SOLUTINGDH
+</div>
+
+<div class="job-date">
+Jun 2023 – Sep 2023
+</div>
+</div>
+
+<ul>
+
+<li>
+<strong>Migración e Instalación Tecnológica Bancaria:</strong>
+Planificación de logística técnica para el desempaque, ensamble, conexión de red local y puesta en marcha física de estaciones de impresión e impresoras multifuncionales de alto volumen corporativo de la marca Lexmark dentro de múltiples sucursales bancarias locales.
+</li>
+
+<li>
+<strong>Garantía de Continuidad de Negocio:</strong>
+Ejecución coordinada y rápida del proceso de desinstalación y retiro físico de los sistemas de impresión antiguos y su inmediata sustitución por la tecnología nueva, minimizando interrupciones operativas en las cajas y oficinas de atención bancaria.
+</li>
+
+<li>
+<strong>Capacitación y Formación de Usuarios Finales:</strong>
+Diseño e impartición de entrenamientos técnicos en sitio orientados al personal bancario sobre el correcto uso de las nuevas terminales, configuraciones de escaneo masivo hacia directorios de red, resolución de atascos básicos y gestión de bandejas de papel.
+</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<div class="job-header">
+<div class="job-title">
+Practicante Técnico en Sistemas | IPS Clínica Salud Florida
+</div>
+
+<div class="job-date">
+Nov 2019 – May 2020
+</div>
+</div>
+
+<ul>
+
+<li>
+<strong>Mantenimiento Físico Preventivo:</strong>
+Ejecución masiva del plan preventivo físico de hardware médico y administrativo, incluyendo procesos de soplado interno de gabinetes, remoción profunda de polvo, limpieza externa profunda y verificación operativa inicial del hardware para prolongar su ciclo de vida útil.
+</li>
+
+<li>
+<strong>Control de Inventarios y Datos en Excel:</strong>
+Creación, estructuración y poblamiento de hojas de cálculo avanzadas en Microsoft Excel para llevar la trazabilidad, control técnico e inventariado preciso de las estaciones de trabajo, impresoras y periféricos activos de la clínica.
+</li>
+
+<li>
+<strong>Documentación Técnica de Procesos:</strong>
+Redacción y estructuración organizada de reportes técnicos de daños, bitácoras de mantenimiento preventivo y correspondencia de soporte técnico utilizando Microsoft Word para el archivo oficial de TI de la empresa.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- PROYECTOS -->
+
+<section class="section">
+
+<h2 class="section-title">
+Proyectos y Logros Destacados
+</h2>
+
+<div class="card">
+
+<h3 style="color:#38bdf8;margin-bottom:15px;">
+Sistema de Gestión de Radicados y Correspondencia Corporativa (PHP / MySQL)
+</h3>
+
+<ul>
+
+<li>
+Diseñé, programé y desplegué de forma autónoma una aplicación web completa orientada a la gestión documental y radicación automática de correspondencia, integrando un módulo estricto de control de auditoría interna para almacenar la trazabilidad de acciones realizadas por el usuario.
+</li>
+
+<li>
+Implementación lógica en backend que calcula plazos máximos legales de respuesta de radicados bajo la normativa de días hábiles, omitiendo automáticamente fines de semana y consumiendo dinámicamente un arreglo parametrizado de festivos anuales.
+</li>
+
+<li>
+Arquitectura con interfaz adaptativa con 4 roles de accesos seguros y controlados (Administrador, Vista, Registro, Control de Gestión), módulos para exportar datos masivos formateados estéticamente a Microsoft Excel y reportes formales listos en PDF, acompañados de dashboards gráficos de barras/líneas para el análisis mensual de rendimiento de la oficina.
+</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3 style="color:#38bdf8;margin-bottom:15px;">
+Infraestructura de Servidor Virtualizado y Red Privada Virtual de Laboratorio (Linux Debian)
+</h3>
+
+<ul>
+
+<li>
+Montaje, configuración y securización de un servidor virtualizado bajo el sistema operativo Linux Debian con el objetivo de servir de entorno de hosting local para aplicaciones PHP. Gestión total del servidor de base de datos MySQL de forma pura mediante la interfaz de línea de comandos por consola (CLI) para la creación de esquemas, optimización de consultas SQL, asignación de permisos seguros y administración de cuentas de usuario.
+</li>
+
+<li>
+Administración avanzada de MySQL mediante CLI.
+</li>
+
+<li>
+Despliegue exitoso de una red privada virtual (VPN) utilizando la tecnología ZeroTier, permitiendo establecer de forma segura conexiones cifradas punto a punto para el control del servidor y consumo seguro de la aplicación web de radicados desde redes externas, eliminando por completo la necesidad de exponer puertos o servicios internos a la internet pública.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- EDUCACION -->
+
+<section class="section">
+
+<h2 class="section-title">
+Educación y Certificaciones
+</h2>
+
+<div class="card">
+
+<ul>
+
+<li>
+<strong>Tecnólogo en Desarrollo de Software</strong> —  Universidad Nacional Abierta y a Distancia (UNAD) (En curso, desde 2024)
+</li>
+
+<li>
+<strong>Google Cybersecurity Professional Certificate</strong> — Coursera / Colnodo
+</li>
+
+<li>
+<strong>Certificaciones Cisco en Redes y Ciberseguridad</strong> — Cisco Networking Academy
+</li>
+
+<li>
+<strong>Desarrollo de Aplicaciones Web</strong> — Misión TIC (UTB)
+</li>
+
+<li>
+<strong>Técnico en Sistemas</strong> — SENA
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="section">
+
+<h2 class="section-title">
+Aptitudes y Tecnologías
+</h2>
+
+<div class="skills-container">
+
+<span class="skill-tag">PHP OOP</span>
+<span class="skill-tag">MySQL CLI</span>
+<span class="skill-tag">Python Automation</span>
+<span class="skill-tag">FastAPI</span>
+<span class="skill-tag">PowerShell</span>
+<span class="skill-tag">VBA Excel</span>
+<span class="skill-tag">JavaScript</span>
+<span class="skill-tag">HTML/CSS</span>
+<span class="skill-tag">GitHub</span>
+<span class="skill-tag">Linux Debian</span>
+<span class="skill-tag">Ciberseguridad</span>
+<span class="skill-tag">Wireshark</span>
+<span class="skill-tag">Nmap</span>
+<span class="skill-tag">Kali Linux</span>
+<span class="skill-tag">VPN ZeroTier</span>
+<span class="skill-tag">Firewall Security</span>
+<span class="skill-tag">LAN/WLAN</span>
+<span class="skill-tag">Ruckus</span>
+<span class="skill-tag">Ruijie</span>
+<span class="skill-tag">Ubiquiti</span>
+<span class="skill-tag">Cableado Estructurado</span>
+<span class="skill-tag">Dell PowerEdge</span>
+<span class="skill-tag">Microelectrónica</span>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+© 2026 Brandon Alexander Puerta Taquinas — Portfolio Profesional TI
+
+</div>
+
+</div>
+
+</body>
+</html>
